@@ -22,10 +22,10 @@ public class JastrowTwo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        tester.search("אא"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
+        tester.search("טגד"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
     }
 
-    private void start() throws IOException{
+    public void start() throws IOException{
         myInfo = splitFile();
     }
 
