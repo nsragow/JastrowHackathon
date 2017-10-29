@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 
-/**
+/**s
  * Created by Aryeh on 10/28/2017.
  */
 public class JastrowTwo {
@@ -30,14 +30,14 @@ public class JastrowTwo {
         myInfo = splitFile();
     }
 
-    public void search(String input){
+    public int search(String input){
         int answer= search(input, 0, 1704);
         //System.out.println("First element in array is " + myInfo[0]);
         //System.out.println(input.compareTo(myInfo[0]));
         //System.out.println("First element in array is " + myInfo[0]);
         //System.out.println(input.compareTo(myInfo[0]));
         answer=answer+=1;
-        return (answer);
+        return answer;
 
     }
 
