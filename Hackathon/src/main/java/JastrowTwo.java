@@ -20,7 +20,7 @@ public class JastrowTwo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        tester.search("אאי"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
+        tester.search("ההכ"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
     }
 
     private void start() throws IOException{
