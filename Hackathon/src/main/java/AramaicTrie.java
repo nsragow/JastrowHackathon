@@ -35,6 +35,9 @@ public class AramaicTrie implements Serializable {
         addEntry(word, index, startingPoint, toAdd);
         */
 
+        if(toAdd == null){
+          throw new NullPointerException("cannot add null entry");
+        }
         Node toBeAddedTo = getNodeOf(toAdd.getWord(), true);
         toBeAddedTo.addDefinition(toAdd);
     }
