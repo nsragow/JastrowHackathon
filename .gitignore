@@ -9,6 +9,7 @@ Jastrow.pdf
 .idea/
 *.iml
 *.iws
+*.pdf
 
 # Mac
 .DS_Store
@@ -16,4 +17,3 @@ Jastrow.pdf
 # Maven
 log/
 target/
-
