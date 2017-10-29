@@ -22,7 +22,7 @@ public class JastrowTwo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        tester.search("אא"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
+        tester.search("ספקא"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
     }
 
     private void start() throws IOException{
@@ -51,14 +51,19 @@ public class JastrowTwo {
         int mid= (high+low)/2;
         String a = myInfo[mid];
         if(low==high){
-            return low;
+        	if(input.compareTo(a)>=0){
+        		return low;
+        	}
+        	else{
+        	return low - 1;
+        	} 
         }else if(low>high){
             return high;
         }
         else if (input.compareTo(a)==0){
             return mid;
         }else if(input.compareTo(a)>0){
-            System.out.println(input.compareTo(a + 1));
+            System.out.println(input.compareTo(a));
 
             low=mid+1;
             return search(input, low, high);
