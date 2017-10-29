@@ -1,3 +1,4 @@
+package com.flyingpenguins.app;
 import net.sourceforge.tess4j.Tesseract;
 
 import java.io.File;
