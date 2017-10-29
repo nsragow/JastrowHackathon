@@ -3,7 +3,7 @@
 /**
  * Created by noah on 7/23/17.
  */
-
+package com.flyingpenguins.app;
 public class HebrewToIndex {
     static int convertToIndex(char c){
         int toReturn = -1;
