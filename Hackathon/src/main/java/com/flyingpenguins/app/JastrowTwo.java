@@ -58,12 +58,9 @@ public class JastrowTwo {
         else if (input.compareTo(a)==0){
             return mid;
         }else if(input.compareTo(a)>0){
-            System.out.println(input.compareTo(a));
-
             low=mid+1;
             return search(input, low, high);
         }else if(input.compareToIgnoreCase(a)<0){
-            System.out.println(input.compareTo(a));
             high=mid-1;
             return search(input, low, high);
         }
@@ -81,8 +78,8 @@ public class JastrowTwo {
         ) {
             while ((line = br.readLine()) != null) {
                 for (String n : line.split(" ")) {
-                    StringBuilder myBuilder = new StringBuilder();
-                    result[i] = n;
+                    String g= n.replaceAll("[\uFEFF-\uFFFF]", "");
+                    result[i] = g;
                     i++;
                 }
             }
