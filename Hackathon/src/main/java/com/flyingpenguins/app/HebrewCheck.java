@@ -12,20 +12,19 @@ public class HebrewCheck {
     }
 
     private boolean InputCheck(String input) {
-        int א = (int) 'א';
-        int ת = (int) 'ת';
+        int first = (int) 'א';
+        int last = (int) 'ת';
         int count = 0;
         int i = 0;
         for (i = 0; i < input.length() - 1; i++) {
             int univalue = (int) input.charAt(i);
-            if ((univalue >= א) && (univalue <= ת)) {
+            if ((univalue >= first) && (univalue <= last)) {
                 count++;
-            }
+            } else {
+		System.out.println("Returned false");
+	    }
         }
-        if (count++ == input.length()) {
-            result = true;
-            return result;
-        }
-        return result;
+        System.out.println("Returned true");
+	return true;
     }
 }
