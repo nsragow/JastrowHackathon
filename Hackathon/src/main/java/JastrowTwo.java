@@ -16,12 +16,13 @@ public class JastrowTwo {
     }
 
     private void start(){
-        myInfo =  new String[10];
-        myInfo[0]= "א";
-        myInfo[1] = "אב";
-        myInfo[2]= "אבד";
-        myInfo[3] = "אבוי";
-        myInfo[4] = "אבטוניות";
+        myInfo = splitFile();
+        // myInfo =  new String[10];
+        // myInfo[0]= "א";
+        // myInfo[1] = "אב";
+        // myInfo[2]= "אבד";
+        // myInfo[3] = "אבוי";
+        // myInfo[4] = "אבטוניות";
         //TAKE OUT PAGE 700
 
 
@@ -49,5 +50,24 @@ public class JastrowTwo {
             return search(input, low, high);
         }
         return 0;
+    }
+
+    public static String[] splitFile() throws IOException {
+        String[] result = new String[1653];
+        String line;
+        int i = 0;
+        try (
+            FileInputStream fis = new FileInputStream("FILEPATH");  //Specify filepath for jastrow.txt (list of header words in hebrew)
+            InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
+            BufferedReader br = new BufferedReader(isr);
+        ) {
+            while ((line = br.readLine()) != null) {
+                for (String n : line.split(" ")) {
+                    result[i] = n;
+                    i++;
+                }
+            }
+        }
+        return result;
     }
 }
