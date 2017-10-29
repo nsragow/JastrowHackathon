@@ -1,6 +1,7 @@
 /**
  * Created by Aryeh on 10/29/2017.
  */
+package com.flyingpenguins.app;
 public class HebrewCompareTester {
     public static void main(String [] args){
         String a = "א";
