@@ -1,4 +1,4 @@
-package com.company;
+package com.flyingpenguins.app;
 
 public class HebrewCheck {
 
@@ -11,7 +11,7 @@ public class HebrewCheck {
         return InputCheck(input);
     }
 
-    public boolean InputCheck(String input) {
+    private boolean InputCheck(String input) {
         int א = (int) 'א';
         int ת = (int) 'ת';
         int count = 0;
