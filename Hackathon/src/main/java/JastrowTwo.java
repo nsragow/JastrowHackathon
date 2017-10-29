@@ -20,7 +20,7 @@ public class JastrowTwo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        tester.search("אאי"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
+        tester.search("אא"); //This is currently a few pages off. Reason can be in the mapping or the algorithm.
     }
 
     private void start() throws IOException{
@@ -40,7 +40,7 @@ public class JastrowTwo {
         int answer= search(input, 0, 1704);
         System.out.println("First element in array is " + myInfo[0]);
         System.out.println(input.compareTo(myInfo[0]));
-        answer=answer+=17;
+        answer=answer+=1;
         System.out.println(answer);
 
     }
@@ -56,7 +56,7 @@ public class JastrowTwo {
         else if (input.compareTo(a)==0){
             return mid;
         }else if(input.compareTo(a)>0){
-            System.out.println(input.compareTo(a));
+            System.out.println(input.compareTo(a + 1));
 
             low=mid+1;
             return search(input, low, high);
@@ -69,18 +69,18 @@ public class JastrowTwo {
     }
 
     public static String[] splitFile() throws IOException {
-        String[] result = new String[1704];
+        String[] result = new String[1704];//create new array of strings (dictoinary)
         String line;
         int i = 0;
-        try (
-                FileInputStream fis = new FileInputStream("C:/Users/Aryeh/OneDrive/Documents/YU/Hackathon2/JastrowHackathon/jastrow.txt");  //Specify filepath for jastrow.txt (list of header words in hebrew)
+        try (//read doc
+                FileInputStream fis = new FileInputStream("C:\\Users\\yosef\\Documents\\YU Hackathon 2017\\JastrowHackathon\\jastrow.txt"); //C:/Users/Aryeh/OneDrive/Documents/YU/Hackathon2/JastrowHackathon/jastrow.txt");  //Specify filepath for jastrow.txt (list of header words in hebrew)
                 InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
                 BufferedReader br = new BufferedReader(isr);
         ) {
             while ((line = br.readLine()) != null) {
                 for (String n : line.split(" ")) {
-                    StringBuilder myBuilder = new StringBuilder();
-                    result[i] = n;
+                	String g = n.replaceAll("[\uFEFF-\uFFFF]", "");//this should get rid of our problem with א
+                    result[i] = g;
                     i++;
                 }
             }
