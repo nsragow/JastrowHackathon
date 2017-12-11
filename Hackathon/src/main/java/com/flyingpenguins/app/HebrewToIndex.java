@@ -6,7 +6,7 @@
 package com.flyingpenguins.app;
 public class HebrewToIndex {
     static int convertToIndex(char c){
-        int toReturn = -1;
+        int toReturn = -1; //Will return -1 if it is not a hebrew character
 
         switch(c){
             case 'א':
